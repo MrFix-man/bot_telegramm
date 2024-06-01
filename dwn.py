@@ -3,7 +3,7 @@ from pytube import YouTube
 
 
 def download(video_url):
-    yt = YouTube(video_url)
+    yt = YouTube(video_url, use_oauth=True)
     video = yt.streams.filter(only_audio=True).first()
 
     destination = 'Download audio'
